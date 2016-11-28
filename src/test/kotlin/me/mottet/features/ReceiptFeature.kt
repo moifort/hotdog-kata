@@ -9,7 +9,7 @@ import me.mottet.domain.sale.Price
 import me.mottet.domain.sale.Product.COCA_COLAS
 import me.mottet.domain.sale.Product.HOT_DOG
 import me.mottet.domain.sale.ProductCatalog
-import me.mottet.domain.sale.SaleRepository
+import me.mottet.domain.sale.SalesBook
 import me.mottet.domain.stand.Stand
 import me.mottet.domain.util.Clock
 import me.mottet.domain.util.Console
@@ -38,7 +38,7 @@ class ReceiptFeature {
                 Stand("Stand A", "35 avenue Linkon - NYC"),
                 ProductCatalog(mapOf(HOT_DOG to HOT_DOG_PRICE, COCA_COLAS to COCA_PRICE)),
                 Stock(sortedMapOf(HOT_DOG to 20, COCA_COLAS to 30), InventoryAlert(emptyMap(), Console(), clock)),
-                SaleRepository(clock),
+                SalesBook(clock),
                 ReceiptPrinter(console),
                 InventoryPrinter(console, clock))
 

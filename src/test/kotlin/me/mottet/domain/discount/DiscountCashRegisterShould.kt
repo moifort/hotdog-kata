@@ -18,7 +18,7 @@ import org.mockito.junit.MockitoJUnitRunner
 @RunWith(MockitoJUnitRunner::class)
 class DiscountCashRegisterShould {
     @Mock lateinit var productCatalog: ProductCatalog
-    @Mock lateinit var saleRepository: SaleRepository
+    @Mock lateinit var salesBook: SalesBook
     @Mock lateinit var receiptPrinter: ReceiptPrinter
     @Mock lateinit var stock: Stock
     @Mock lateinit var inventoryPrinter: InventoryPrinter
@@ -31,7 +31,7 @@ class DiscountCashRegisterShould {
                 Stand("Stand A", "35 avenue Linkon - NYC"),
                 productCatalog,
                 stock,
-                saleRepository,
+                salesBook,
                 receiptPrinter,
                 inventoryPrinter)
     }
@@ -49,7 +49,7 @@ class DiscountCashRegisterShould {
                 setOf(DiscountPercentOnProduct(COCA_COLAS, 10.0)))
 
         // Then
-        verify(saleRepository).addSale(
+        verify(salesBook).addSale(
                 Stand("Stand A", "35 avenue Linkon - NYC"),
                 listOf(Item(HOT_DOG, 2, hotDogPrice), Item(COCA_COLAS, 1, cocaPrice)),
                 setOf(DiscountPercentOnProduct(COCA_COLAS, 10.0)))
@@ -67,7 +67,7 @@ class DiscountCashRegisterShould {
         cashRegister.registerOrder(mapOf(HOT_DOG to 2, COCA_COLAS to 1))
 
         // Then
-        verify(saleRepository).addSale(
+        verify(salesBook).addSale(
                 Stand("Stand A", "35 avenue Linkon - NYC"),
                 listOf(Item(HOT_DOG, 2, hotDogPrice), Item(COCA_COLAS, 1, cocaPrice)),
                 emptySet())

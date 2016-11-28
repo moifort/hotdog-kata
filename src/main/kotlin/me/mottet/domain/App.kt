@@ -11,7 +11,7 @@ import me.mottet.domain.sale.Price
 import me.mottet.domain.sale.Product.COCA_COLAS
 import me.mottet.domain.sale.Product.HOT_DOG
 import me.mottet.domain.sale.ProductCatalog
-import me.mottet.domain.sale.SaleRepository
+import me.mottet.domain.sale.SalesBook
 import me.mottet.domain.stand.Stand
 import me.mottet.domain.util.Clock
 import me.mottet.domain.util.Console
@@ -24,7 +24,7 @@ fun main(args: Array<String>) {
                     mapOf(HOT_DOG to 10, COCA_COLAS to 10),
                     Console(),
                     Clock())),
-            SaleRepository(Clock()),
+            SalesBook(Clock()),
             ReceiptPrinter(Console()),
             InventoryPrinter(Console(), Clock()))
 
@@ -56,7 +56,7 @@ fun main(args: Array<String>) {
             Stand("Stand B", "3 Baker street - NYC"),
             ProductCatalog(mapOf(HOT_DOG to Price(7.0), COCA_COLAS to Price(2.0))),
             Stock(sortedMapOf(HOT_DOG to 120, COCA_COLAS to 120), InventoryAlert(mapOf(HOT_DOG to 10, COCA_COLAS to 10), Console(), Clock())),
-            SaleRepository(Clock()),
+            SalesBook(Clock()),
             ReceiptPrinter(Console()),
             InventoryPrinter(Console(), Clock()))
 

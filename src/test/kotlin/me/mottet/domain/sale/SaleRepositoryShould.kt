@@ -15,24 +15,24 @@ import java.time.LocalDateTime
 class SaleRepositoryShould {
     @Mock lateinit var clock: Clock
 
-    lateinit var saleRepository: SaleRepository
+    lateinit var salesBook: SalesBook
 
     @Before
     fun setUp() {
-        saleRepository = SaleRepository(clock)
+        salesBook = SalesBook(clock)
     }
 
     @Test
     fun `store and create sale`() {
         // Given
         `when`(clock.now()).thenReturn(LocalDateTime.of(2016, 11, 3, 12, 20))
-        saleRepository.addSale(
+        salesBook.addSale(
                 Stand("Stand A", "Location"),
                 listOf(Item(Product.HOT_DOG, 2, Price(10.0))),
                 emptySet())
 
         // When
-        val sales = saleRepository.allSales()
+        val sales = salesBook.allSales()
 
         // THen
         assertThat(sales).hasSize(1)

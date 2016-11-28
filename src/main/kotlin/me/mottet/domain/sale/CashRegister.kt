@@ -9,7 +9,7 @@ import me.mottet.domain.stand.Stand
 class CashRegister(private val stand: Stand,
                    private val productCatalog: ProductCatalog,
                    private val stock: Stock,
-                   private val saleRepository: SaleRepository,
+                   private val salesBook: SalesBook,
                    private val receiptPrinter: ReceiptPrinter,
                    private val inventoryPrinter: InventoryPrinter) {
 
@@ -18,7 +18,7 @@ class CashRegister(private val stand: Stand,
     }
 
     fun registerOrder(order: Map<Product, Int>, discounts: Set<Discount>) {
-        saleRepository.addSale(stand, itemsOf(order), discounts)
+        salesBook.addSale(stand, itemsOf(order), discounts)
         stock.removeProduct(order)
     }
 
@@ -27,7 +27,7 @@ class CashRegister(private val stand: Stand,
     }
 
     fun printReceipt() {
-        val currentSale = saleRepository.allSales().last()
+        val currentSale = salesBook.allSales().last()
         receiptPrinter.print(currentSale)
     }
 

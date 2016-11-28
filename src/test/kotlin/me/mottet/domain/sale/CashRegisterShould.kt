@@ -18,7 +18,7 @@ import java.time.LocalDateTime
 @RunWith(MockitoJUnitRunner::class)
 class CashRegisterShould {
     @Mock lateinit var productCatalog: ProductCatalog
-    @Mock lateinit var saleRepository: SaleRepository
+    @Mock lateinit var salesBook: SalesBook
     @Mock lateinit var receiptPrinter: ReceiptPrinter
     @Mock lateinit var stock: Stock
     @Mock lateinit var inventoryPrinter: InventoryPrinter
@@ -31,7 +31,7 @@ class CashRegisterShould {
                 Stand("Stand A", "35 avenue Linkon - NYC"),
                 productCatalog,
                 stock,
-                saleRepository,
+                salesBook,
                 receiptPrinter,
                 inventoryPrinter)
     }
@@ -48,7 +48,7 @@ class CashRegisterShould {
         cashRegister.registerOrder(mapOf(HOT_DOG to 2, COCA_COLAS to 1))
 
         // Then
-        verify(saleRepository).addSale(
+        verify(salesBook).addSale(
                 Stand("Stand A", "35 avenue Linkon - NYC"),
                 listOf(Item(HOT_DOG, 2, hotDogPrice), Item(COCA_COLAS, 1, cocaPrice)),
                 emptySet())
@@ -57,7 +57,7 @@ class CashRegisterShould {
     @Test
     fun `send last sale when print`() {
         // Given
-        `when`(saleRepository.allSales()).thenReturn(listOf(
+        `when`(salesBook.allSales()).thenReturn(listOf(
                 Sale(Stand("Stand A", "35 avenue Linkon - NYC"),
                         Order(listOf(Item(HOT_DOG, 1, Price(10.0))), LocalDateTime.of(2016, 12, 10, 11, 0)),
                         emptySet()),

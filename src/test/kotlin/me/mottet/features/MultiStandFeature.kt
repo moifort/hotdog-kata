@@ -9,7 +9,7 @@ import me.mottet.domain.sale.Price
 import me.mottet.domain.sale.Product.COCA_COLAS
 import me.mottet.domain.sale.Product.HOT_DOG
 import me.mottet.domain.sale.ProductCatalog
-import me.mottet.domain.sale.SaleRepository
+import me.mottet.domain.sale.SalesBook
 import me.mottet.domain.stand.Stand
 import me.mottet.domain.util.Clock
 import me.mottet.domain.util.Console
@@ -31,7 +31,7 @@ class MultiStandFeature {
         // Given
         Mockito.`when`(clock.now()).thenReturn(LocalDateTime.of(2016, 4, 19, 10, 0))
         val stock = Stock(sortedMapOf(HOT_DOG to 20, COCA_COLAS to 30), InventoryAlert(emptyMap(), Console(), clock))
-        val saleRepository = SaleRepository(clock)
+        val saleRepository = SalesBook(clock)
         val receipt = ReceiptPrinter(console)
         val inventory = InventoryPrinter(console, clock)
         val cashRegisterStandA = CashRegister(

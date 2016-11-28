@@ -4,7 +4,7 @@ import me.mottet.domain.discount.Discount
 import me.mottet.domain.stand.Stand
 import me.mottet.domain.util.Clock
 
-class SaleRepository(private val clock: Clock) {
+class SalesBook(private val clock: Clock) {
     private val sales = mutableListOf<Sale>()
 
     fun addSale(stand: Stand, items: List<Item>, discounts: Set<Discount>) =

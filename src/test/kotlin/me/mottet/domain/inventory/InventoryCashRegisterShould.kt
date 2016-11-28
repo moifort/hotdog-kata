@@ -18,7 +18,7 @@ import org.mockito.junit.MockitoJUnitRunner
 @RunWith(MockitoJUnitRunner::class)
 class InventoryCashRegisterShould {
     @Mock lateinit var productCatalog: ProductCatalog
-    @Mock lateinit var saleRepository: SaleRepository
+    @Mock lateinit var salesBook: SalesBook
     @Mock lateinit var receiptPrinter: ReceiptPrinter
     @Mock lateinit var stock: Stock
     @Mock lateinit var inventoryPrinter: InventoryPrinter
@@ -32,7 +32,7 @@ class InventoryCashRegisterShould {
                 Stand("Stand A", "35 avenue Linkon - NYC"),
                 productCatalog,
                 stock,
-                saleRepository,
+                salesBook,
                 receiptPrinter,
                 inventoryPrinter)
     }

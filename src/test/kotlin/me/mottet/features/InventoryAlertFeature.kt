@@ -36,7 +36,7 @@ class InventoryAlertFeature {
                 Stock(sortedMapOf(HOT_DOG to 15, COCA_COLAS to 20), inventoryAlert),
                 SalesBook(Clock()),
                 ReceiptPrinter(Console()),
-                InventoryPrinter(Console(), clock))
+                InventoryPrinter(Console()))
 
         // When
         cashRegister.registerOrder(mapOf(HOT_DOG to 11, COCA_COLAS to 12))

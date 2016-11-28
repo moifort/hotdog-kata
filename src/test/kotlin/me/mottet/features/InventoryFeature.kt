@@ -19,24 +19,21 @@ import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnitRunner
-import java.time.LocalDateTime
 
 @RunWith(MockitoJUnitRunner::class)
 class InventoryFeature {
     @Mock lateinit var console: Console
-    @Mock lateinit var clock: Clock
 
     @Test
     fun `should print inventory`() {
         // Given
-        Mockito.`when`(clock.now()).thenReturn(LocalDateTime.of(2016, 4, 19, 10, 0))
         val cashRegister = CashRegister(
                 Stand("Stand A", "35 avenue Linkon - NYC"),
                 ProductCatalog(mapOf(HOT_DOG to Price(10.00), COCA_COLAS to Price(1.30))),
-                Stock(sortedMapOf(HOT_DOG to 20, COCA_COLAS to 30), InventoryAlert(emptyMap(), Console(), clock)),
+                Stock(sortedMapOf(HOT_DOG to 20, COCA_COLAS to 30), InventoryAlert(emptyMap(), Console(), Clock())),
                 SalesBook(Clock()),
                 ReceiptPrinter(Console()),
-                InventoryPrinter(console, clock))
+                InventoryPrinter(console))
 
         // When
         cashRegister.registerOrder(mapOf(HOT_DOG to 2, COCA_COLAS to 3))
@@ -47,7 +44,6 @@ class InventoryFeature {
         // Then
         val inOrder = Mockito.inOrder(console)
         inOrder.verify(console).printLine("Inventory")
-        inOrder.verify(console).printLine("19-04-2016")
         inOrder.verify(console).printLine("---")
         inOrder.verify(console).printLine("Product | Quantity")
         inOrder.verify(console).printLine("Hot Dog | 18")

@@ -45,7 +45,7 @@ class StockShould {
     @Test(expected = ProductOutOfStockException::class)
     fun `remove product who is empty`() {
         // When
-        stock.removeProduct(HOT_DOG, 3)
+        stock.removeProduct(HOT_DOG, 23)
     }
 
 

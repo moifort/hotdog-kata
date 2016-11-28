@@ -70,8 +70,7 @@ class InventoryCashRegisterShould {
         cashRegister.registerOrder(mapOf(HOT_DOG to 2, COCA_COLAS to 1))
 
         // Then
-        verify(stock).removeProduct(HOT_DOG, 2)
-        verify(stock).removeProduct(COCA_COLAS, 1)
+        verify(stock).removeProduct(mapOf(HOT_DOG to 2, COCA_COLAS to 1))
     }
 }
 

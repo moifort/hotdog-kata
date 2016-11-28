@@ -33,7 +33,7 @@ class MultiStandFeature {
         val stock = Stock(sortedMapOf(HOT_DOG to 20, COCA_COLAS to 30), InventoryAlert(emptyMap(), Console(), clock))
         val saleRepository = SalesBook(clock)
         val receipt = ReceiptPrinter(console)
-        val inventory = InventoryPrinter(console, clock)
+        val inventory = InventoryPrinter(console)
         val cashRegisterStandA = CashRegister(
                 Stand("Stand A", "35 avenue Linkon - NYC"),
                 ProductCatalog(mapOf(HOT_DOG to Price(10.00), COCA_COLAS to Price(1.30))),

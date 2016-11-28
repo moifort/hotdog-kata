@@ -40,7 +40,7 @@ class ReceiptFeature {
                 Stock(sortedMapOf(HOT_DOG to 20, COCA_COLAS to 30), InventoryAlert(emptyMap(), Console(), clock)),
                 SalesBook(clock),
                 ReceiptPrinter(console),
-                InventoryPrinter(console, clock))
+                InventoryPrinter(console))
 
         // When
         cashRegister.registerOrder(mapOf(HOT_DOG to 4, COCA_COLAS to 1))

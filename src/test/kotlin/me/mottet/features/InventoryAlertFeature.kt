@@ -11,8 +11,8 @@ import me.mottet.domain.sale.Product.HOT_DOG
 import me.mottet.domain.sale.ProductCatalog
 import me.mottet.domain.sale.SalesBook
 import me.mottet.domain.stand.Stand
-import me.mottet.domain.util.Clock
-import me.mottet.domain.util.Console
+import me.mottet.infra.Clock
+import me.mottet.infra.Console
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock

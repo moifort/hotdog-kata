@@ -1,4 +1,4 @@
-package me.mottet.domain
+package me.mottet.infra
 
 import me.mottet.domain.discount.DiscountPercentOnProduct
 import me.mottet.domain.discount.DiscountPriceOnProduct
@@ -13,8 +13,6 @@ import me.mottet.domain.sale.Product.HOT_DOG
 import me.mottet.domain.sale.ProductCatalog
 import me.mottet.domain.sale.SalesBook
 import me.mottet.domain.stand.Stand
-import me.mottet.domain.util.Clock
-import me.mottet.domain.util.Console
 
 fun main(args: Array<String>) {
     val clock = Clock()

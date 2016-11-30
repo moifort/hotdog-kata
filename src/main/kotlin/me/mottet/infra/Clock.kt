@@ -1,4 +1,4 @@
-package me.mottet.domain.util
+package me.mottet.infra
 
 import java.time.LocalDateTime
 

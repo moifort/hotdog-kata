@@ -1,4 +1,4 @@
-package me.mottet.domain.util
+package me.mottet.infra
 
 class Console {
     fun printLine(line: String) {

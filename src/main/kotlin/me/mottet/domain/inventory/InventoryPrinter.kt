@@ -1,7 +1,7 @@
 package me.mottet.domain.inventory
 
 import me.mottet.domain.sale.Product
-import me.mottet.domain.util.Console
+import me.mottet.infra.Console
 
 class InventoryPrinter(private val console: Console) {
 

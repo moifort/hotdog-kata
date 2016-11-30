@@ -1,7 +1,7 @@
 package me.mottet.domain.sale
 
 import me.mottet.domain.stand.Stand
-import me.mottet.domain.util.Clock
+import me.mottet.infra.Clock
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test

@@ -7,7 +7,7 @@ import me.mottet.domain.sale.Product.COCA_COLAS
 import me.mottet.domain.sale.Product.HOT_DOG
 import me.mottet.domain.sale.Sale
 import me.mottet.domain.stand.Stand
-import me.mottet.domain.util.Console
+import me.mottet.infra.Console
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock

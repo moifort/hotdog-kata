@@ -3,7 +3,7 @@ package me.mottet.domain.sale
 import me.mottet.domain.discount.DiscountPercentOnProduct
 import me.mottet.domain.sale.Product.COCA_COLAS
 import me.mottet.domain.stand.Stand
-import me.mottet.domain.util.Clock
+import me.mottet.infra.Clock
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test

@@ -3,7 +3,7 @@ package me.mottet.domain.receipt
 import me.mottet.domain.inventory.InventoryPrinter
 import me.mottet.domain.sale.Product.COCA_COLAS
 import me.mottet.domain.sale.Product.HOT_DOG
-import me.mottet.domain.util.Console
+import me.mottet.infra.Console
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock

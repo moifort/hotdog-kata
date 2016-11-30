@@ -2,8 +2,8 @@ package me.mottet.domain.receipt
 
 import me.mottet.domain.inventory.InventoryAlert
 import me.mottet.domain.sale.Product.HOT_DOG
-import me.mottet.domain.util.Clock
-import me.mottet.domain.util.Console
+import me.mottet.infra.Clock
+import me.mottet.infra.Console
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock

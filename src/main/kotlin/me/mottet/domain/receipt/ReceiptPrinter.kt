@@ -3,7 +3,7 @@ package me.mottet.domain.receipt
 import me.mottet.domain.discount.Discount
 import me.mottet.domain.sale.Order
 import me.mottet.domain.sale.Sale
-import me.mottet.domain.util.Console
+import me.mottet.infra.Console
 import java.time.format.DateTimeFormatter
 import java.util.*
 
